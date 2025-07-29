@@ -1,0 +1,4 @@
+defaults:
+  - _self_
+  - /training/sequential_tasks_gnn_1.yaml
+

@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run eval_rnn_model.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/sequence_models/model_eval/eval_rnn_model.py",
+      "justMyCode": false,
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Run rnn_model.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/sequence_models/model_training/rnn_model.py",
+      "justMyCode": false,
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Run benchmarl_train.py",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "trainers.benchmarl_train",
+      "justMyCode": false,
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Run mlp_decoder.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/sequence_models/model_training/mlp_decoder.py",
+      "justMyCode": false,
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    }
+  ]
+}
