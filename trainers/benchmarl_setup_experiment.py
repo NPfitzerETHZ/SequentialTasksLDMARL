@@ -29,8 +29,9 @@ def _patch_env_creator(scenario_cls_path: str):
         )
 
     VmasTask.get_env_fun = get_env_fun
-    
-def benchmarl_setup_experiment(cfg: DictConfig) -> Experiment:
+
+def benchmarl_setup_experiment(cfg: DictConfig, seed: int) -> Experiment:
+
     # ---------- TASK ----------
     task_enum = VmasTask[cfg.task.name]
     task_enum.config = None
@@ -78,7 +79,7 @@ def benchmarl_setup_experiment(cfg: DictConfig) -> Experiment:
         algorithm_config=algorithm_config,
         model_config=actor_model,
         critic_model_config=critic_model,
-        seed=cfg.seed,
+        seed=seed,
         config=exp_cfg,
     )
 

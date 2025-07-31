@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - /hit_the_switch/experiment/experiment
+  - /hit_the_switch/model/shared_gnn_no_encoder
+  - /hit_the_switch/model/actor   # actor-network params
+  - /hit_the_switch/model/critic  # critic-network params
+  - /hit_the_switch/task/hit_the_switch
+  - /hit_the_switch/algorithm/mappo
+
+seed: 1

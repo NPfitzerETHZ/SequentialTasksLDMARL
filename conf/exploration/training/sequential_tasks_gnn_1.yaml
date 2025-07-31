@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - /exploration/experiment/experiment
+  - /exploration/model/shared_gnn_conv2d_no_encoder.yaml
+  - /exploration/model/mymodel_actor_large    # actor-network params
+  - /exploration/model/mymodel_critic_large  # critic-network params
+  - /exploration/task/sequential_tasks_1.yaml
+  - /exploration/algorithm/mappo
+
+seed: 1

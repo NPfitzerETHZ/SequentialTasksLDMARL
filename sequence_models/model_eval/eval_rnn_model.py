@@ -108,10 +108,9 @@ model = load_event_rnn_model(decoder_model, "sequence_models/event_rnn_best_gru-
 # ]
 events = [
     [0., 0., 0.],
-    [1., 0., 0.] 
 ]
 
-task = "Ok agents, find the flag in the bottom-right corner and defend it as best you can.\n"
+task = "Ok agents, find the flag in the north-east corner and defend it as best you can.\n"
 subtask = "Look for the target" # Initialization subtask - We don't need to start at the beginning of the automaton.
 
 result = predict_state_rollout(
@@ -172,5 +171,5 @@ ax.set_title(f"Decoder Output ({10}x{10} Grid)")
 # Create a fresh colorbar
 colorbar = fig.colorbar(im, ax=ax)
 canvas.draw()
-#root.mainloop()
+root.mainloop()
 

@@ -20,7 +20,7 @@ from pathlib import Path
 import os
 
 from trainers.benchmarl_setup_experiment import benchmarl_setup_experiment
-from scenario.multi_agent_sequential import MyLanguageScenario
+from scenarios.exploration.multi_agent_sequential import MyLanguageScenario
 from sequence_models.model_training.rnn_model import EventRNN
 class SequentialTaskEnv:
     """ Use this script to run the sequential task environment. """

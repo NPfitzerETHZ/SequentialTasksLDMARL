@@ -29,7 +29,7 @@
       "name": "Run benchmarl_train.py",
       "type": "debugpy",
       "request": "launch",
-      "module": "trainers.benchmarl_train",
+      "program": "${workspaceFolder}/trainers/benchmarl_train.py",
       "justMyCode": false,
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",

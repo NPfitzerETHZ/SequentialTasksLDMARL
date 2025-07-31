@@ -15,6 +15,7 @@ venv/
 logs/
 *.log
 *.tmp
+*.pth
 
 # Ignore macOS system files
 .DS_Store

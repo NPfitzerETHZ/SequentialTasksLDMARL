@@ -227,7 +227,6 @@ class EventRNN(pl.LightningModule):
         D = self.hparams.latent_dim
         L = self.hparams.num_layers
 
-
         fused = torch.cat([self.e_proj(e),self.y_proj(y)], dim=-1)  # (B, T, 2*I)
 
         # ───── Manual stepping for GRUCell ─────
@@ -249,8 +248,8 @@ class EventRNN(pl.LightningModule):
                 packed_out, batch_first=True, total_length=T
             )                                                    # (B,T,D)
 
-        state_decoder_out = self.state_head(torch.cat([out,fused], dim=-1))  # (B, T, state_dim)
-        #state_decoder_out = self.state_head(out)
+        #state_decoder_out = self.state_head(torch.cat([out,fused], dim=-1))  # (B, T, state_dim)
+        state_decoder_out = self.state_head(out)
         recon_out = self.recon_head(out)  # (B, T, state_dim)
         recon_decoder_out = self.recon_decoder(out)  # (B, T, D)
         #decoder_out = self.cls_head(out)  # (B, T, state_dim)
@@ -465,6 +464,7 @@ def run_training(batch_size: int, input_dim: int, resume_ckpt: str | None = None
     best_ckpt = checkpoint_cb.best_model_path
     best_model = EventRNN.load_from_checkpoint(best_ckpt)
     save_path = f"sequence_models/event_rnn_best_{run_name}.pth"
+    
     torch.save(best_model.state_dict(), save_path)
     print(f"[{run_name}] Best model saved to {save_path} (ckpt: {best_ckpt})")
 

@@ -1,0 +1,45 @@
+name: PASSAGE                          # maps to VmasTask.SAMPLING
+scenario_class: scenarios.hit_the_switch.hit_the_switch_scenario.HitSwitchScenario
+
+params:
+  # === Map & Layout ===
+  x_semidim: 1.0
+  y_semidim: 1.0
+  n_passages: 4
+  shared_reward: False
+  agent_radius: 0.03333
+  n_agents: 5
+  passage_width: 0.2
+  passage_length: 0.103
+  switch_length: 0.2
+  switch_width: 0.2
+  break_all_wall: True
+
+  # === Rewards ===
+  shaping_factor: 100
+
+  # === Dynamics ===
+  use_velocity_controller: True
+  use_kinematic_model: False
+  agent_weight: 1.0
+  agent_v_range: 1.0
+  agent_a_range: 1.0
+  min_collision_distance: 0.1
+  linear_friction: 0.1
+
+  # === Agent Communication & GNNs ===
+  use_gnn: ${hit_the_switch.model.model_shared.use_gnn}
+  comms_radius: ${hit_the_switch.model.model_shared.comms_radius}
+
+  # === Language ===
+  embedding_size: 1024
+  use_embedding_ratio: 1.0
+  event_dim: 3
+  state_dim: 5
+  use_rnn: False
+  data_json_path: "data/hit_the_switch.json"
+  decoder_model_path: "decoders/llm0_decoder_model.pth"
+  sequence_model_path: "sequence_models/event_rnn_best_gru-in64-bs128.pth"
+
+   # === Additional Scenario ===
+  max_steps: 250

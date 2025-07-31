@@ -1,4 +1,4 @@
 defaults:
   - _self_
-  - /training/sequential_tasks_gnn_1.yaml
+  - /hit_the_switch/training/hit_the_switch.yaml
 
